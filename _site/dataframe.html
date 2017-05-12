@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>DataFrame</title>
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/emerald/css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic%7CSignika:700,300,400,600' rel='stylesheet' type='text/css'>
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+</head>
+
+
+<body>
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<a href="/emerald">Home</a>
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	      <a href="
+								 		/emerald/about
+								 
+								 		" title="About">About</a>
+	    
+	  
+	    
+	  
+	    
+	      <a href="
+								 		/emerald/dask
+								 
+								 		" title="Dask">Dask</a>
+	    
+	  
+	    
+	      <a href="
+								 		/emerald/dataframe
+								 
+								 		" title="DataFrame">DataFrame</a>
+	    
+	  
+	    
+	      <a href="
+								 		/emerald/hdfs
+								 
+								 		" title="HDFS">HDFS</a>
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	      <a href="
+								 		/emerald/pandas
+								 
+								 		" title="Pandas">Pandas</a>
+	    
+	  
+	    
+	  
+
+    <!-- Nav links -->
+	  <a href="https://github.com/KingFelix/emerald/archive/master.zip">Download</a>
+<a href="https://github.com/KingFelix/emerald">Project on Github</a>
+
+	</div>
+
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<span>version 1.1.0</span>
+
+</footer>
+	
+
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header">
+	<a href="/emerald">
+		<!--<img src="/emerald/img/emerald.svg" alt="Emerald Logo">-->
+	  <h1>Pandas y HDFS con DataFrame Dask</h1>
+	</a>
+</header>
+
+      
+
+    <!-- Main content -->
+	  <div id="container">
+		  
+		<main>
+
+			<article id="page">
+	
+  <h1 id="dataframe">DataFrame</h1>
+<p>DataFrame Dask se ven y se sienten como marcos de datos de pandas, pero operan en conjuntos de datos más grandes que la memoria utilizando múltiples subprocesos. Dask.dataframe no implementa la interfaz completa de pandas.</p>
+
+<p>El módulo dask.dataframe implementa un DataFrame paralelo bloqueado que imita un subconjunto de las pandas DataFrame. Un dask DataFrame se compone de varios en-memoria pandas DataFrames separados a lo largo del índice. Una operación en un dask DataFrame desencadena muchas operaciones pandas en los pandas constituyentes DataFrames de una manera que es consciente de paralelismo potencial y restricciones de memoria.</p>
+
+<h3 id="daskdataframe-copies-the-pandas-api">Dask.dataframe copies the pandas API</h3>
+
+<p>Debido a que la API dask.dataframe es un subconjunto de la API pandas, debe ser familiar para los usuarios pandas. Hay algunas ligeras alteraciones debido a la naturaleza paralela de dask.</p>
+
+<h3 id="programación-con-hilos">Programación con hilos</h3>
+
+<p>Por defecto, dask.dataframe utiliza el planificador multihilo. Esto expone un cierto paralelismo cuando los pandas o las operaciones numpy subyacentes liberan el GIL. Generalmente los pandas tienen más GIL que NumPy, por lo que las aceleraciones multi-core no son tan pronunciadas para dask.dataframe como lo son para dask.array. Esto está cambiando y el equipo de desarrollo de pandas está trabajando activamente en la liberación de la GIL.</p>
+
+<h3 id="qué-no-funciona">¿Qué no funciona?</h3>
+
+<p>Dask.dataframe sólo cubre una parte pequeña pero bien utilizada de la API de pandas. Esta limitación es por dos razones:</p>
+
+<p>El API de pandas es enorme
+Algunas operaciones son realmente difíciles de hacer en paralelo (por ejemplo, ordenar)</p>
+
+<p>Además, algunas operaciones importantes como set_index funcionan, pero son más lentas que en pandas porque pueden escribir en disco.</p>
+
+<h3 id="particiones">Particiones</h3>
+
+<p>Internamente un marco de datos dask se divide en muchas particiones, cada partición es un marco de datos pandas. Estos marcos de datos se dividen verticalmente a lo largo del índice. Cuando nuestro índice está clasificado y conocemos los valores de las divisiones de nuestras particiones entonces podemos ser inteligentes y eficientes.</p>
+
+<p>Por ejemplo, si tenemos un índice de series de tiempo, nuestras particiones pueden dividirse por mes. Todo enero vivirá en una partición, mientras que todo el mes de febrero vivirá en la siguiente. En estos casos, operaciones como loc, groupby y join / merge a lo largo del índice pueden ser mucho más eficientes de lo que de otro modo sería posible en paralelo. Puede ver el número de particiones y divisiones de su marco de datos con los siguientes campos</p>
+
+<p><a href="/emerald">back to the homepage</a>.</p>
+
+
+</article>
+
+	  </main>
+		
+		  <!-- Pagination links -->
+      
+
+	  </div>
+	    
+	    <!-- Footer -->
+	    <footer><span>@2017 - Peinado - Cerrón - Huaranga</span></footer>
+
+
+	    <!-- Script -->
+      <script src="/emerald/js/main.js"></script>	
+
+
+	</div>
+</body>
+</html>
