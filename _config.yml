@@ -1,14 +1,12 @@
 # Site settings
 title: Pandas y HDFS con DataFrame Dask
 description: "Pandas y HDFS con DataFrame Dask"
-url: "http://www.jacoporabolini.com/emerald"
 author:
-  name: "Enrique Peinado"
-  email: "epeinador@gmail.com"
-  url: "http://www.jacoporabolini.com"
+  name: "Enrique Peinado-Renzo Cerrón-Edgar Huaranga"
+  email: "epeinador@uni.pe-rcerront@uni.pe-edgar.huaranga@uni.pe"
 
 # Build settings
-baseurl: /emerald # Change this to your relative path (ex: /blog/), or leave just a /
+baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
 markdown: kramdown
 source: .
 destination: ./_site
@@ -26,7 +24,8 @@ defaults:
       layout: "post"
 
 # Plugins
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
 
 # Custom variables
 version: "1.1.0"
