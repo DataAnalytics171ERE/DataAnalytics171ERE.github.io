@@ -6,7 +6,7 @@ author:
   email: "epeinador@uni.pe-rcerront@uni.pe-edgar.huaranga@uni.pe"
 
 # Build settings
-baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
+baseurl: / 
 markdown: kramdown
 source: .
 destination: ./_site
