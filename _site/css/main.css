@@ -19,9 +19,9 @@ html {
   font-size: 16px;
   line-height: 1.5;
   color: #222222; }
-  @media (min-width: 940px) {
+  @media (min-width: 1100px) {
     html {
-      font-size: 18px; } }
+      font-size: 15px; } }
 
 /*- Link -*/
 a {

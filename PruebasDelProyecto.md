@@ -3,9 +3,7 @@ layout: page
 title: Aplicación
 ---
 
----
 ## Pruebas
----
 
 Para nuestras pruebas usamos dos archivos csv cada uno de 1.8 GB aproximadamente el cual consiste en datos de lo staxis de New York City del año 2015 en los meses de Enero y Febrero.
 
@@ -34,10 +32,10 @@ hdfs = HDFileSystem(host='localhost', port=9000)
 print(hdfs.ls('/user/data/tripData/'))
 with hdfs.open('/user/data/tripData/yellow_tripdata_2015-01.csv') as f:
     nyc20151 = pandas.read_csv(f)
-    
+
 with hdfs.open('/user/data/tripData/yellow_tripdata_2015-02.csv') as f:
     nyc20152 = pandas.read_csv(f)
-    
+
 
 ```
 
@@ -53,7 +51,7 @@ Podemos observar las cinco primeras filas de los csv almacenados en el HDFS. Cad
 * trip_distance : La distancia en millas que reportó el taximetro.
 * pickup_longitude: Longitud donde el medidor fue activado.
 * pickup_latitude : Latitud donde el medidor fue activado.
-* RateCodeID : 
+* RateCodeID :
 * store_and_fw_flag
 * dropoff_longitude :  Longitud donde el medidor fue desactivado.
 * dropoff_latitude : Latitud donde el medidor fue activado.
@@ -1033,4 +1031,3 @@ nyc20152[nyc20152.payment_type == 3].head()
 ```
 
 [back to the homepage]({{ site.baseurl }}).
-
