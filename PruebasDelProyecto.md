@@ -1,3 +1,7 @@
+---
+layout: page
+title: Aplicación
+---
 
 ---
 ## Pruebas
@@ -1027,3 +1031,6 @@ nyc20152[nyc20152.payment_type == 3].head()
 ```python
 
 ```
+
+[back to the homepage]({{ site.baseurl }}).
+
