@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Aplicación
+title: Pruebas
 ---
-
-## Pruebas
 
 Para nuestras pruebas usamos dos archivos csv cada uno de 1.8 GB aproximadamente el cual consiste en datos de lo staxis de New York City del año 2015 en los meses de Enero y Febrero.
 
@@ -70,9 +68,6 @@ Podemos observar las cinco primeras filas de los csv almacenados en el HDFS. Cad
 ```python
 nyc20151.head()
 ```
-
-
-
 
 <div>
 <table border="1" class="dataframe">

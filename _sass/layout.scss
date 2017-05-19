@@ -1,8 +1,23 @@
 /* -- General Layout -- */
 
 /* Navigation */
+#map {
+  height: 1100px;
+  position: relative;
+  overflow: visible;
+}
+#floating-panel {
+  position: absolute;
+  top: 38%;
+  left: 45%;
+  text-align: center;
+  font-family: "Roboto","sans-serif";
+  line-height: 30px;
+  z-index: 5;
+}
 
-#nav, #nav-left { 
+
+#nav, #nav-left {
   a {
     display: block;
     color: $background-color;

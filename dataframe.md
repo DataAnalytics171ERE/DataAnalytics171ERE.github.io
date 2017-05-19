@@ -2,8 +2,7 @@
 layout: page
 title: DataFrame
 ---
-DataFrame
-====================
+
 DataFrame Dask se ven y se sienten como marcos de datos de pandas, pero operan en conjuntos de datos más grandes que la memoria utilizando múltiples subprocesos. Dask.dataframe no implementa la interfaz completa de pandas.
 
 El módulo dask.dataframe implementa un DataFrame paralelo bloqueado que imita un subconjunto de las pandas DataFrame. Un dask DataFrame se compone de varios en-memoria pandas DataFrames separados a lo largo del índice. Una operación en un dask DataFrame desencadena muchas operaciones pandas en los pandas constituyentes DataFrames de una manera que es consciente de paralelismo potencial y restricciones de memoria.
