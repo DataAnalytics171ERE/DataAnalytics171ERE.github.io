@@ -13,5 +13,6 @@ Estan son:
 * HDFS
 
 Por ultimo veremos una aplicación:
+
 <img src="{{ "/img/apli.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Aplicación">
 [back to the homepage]({{ site.baseurl }}).

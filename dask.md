@@ -2,8 +2,7 @@
 layout: page
 title: Dask
 ---
-Dask
-====================
+
 Dask es una biblioteca de computación paralela flexible para la computación analítica.
 
 Dask se compone de dos componentes:

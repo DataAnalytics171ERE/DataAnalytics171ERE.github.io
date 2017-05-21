@@ -1,4 +1,9 @@
 
+---
+layout: page
+title: Pruebas
+---
+
 .markdown-here-wrapper {
   font-family: Verdana, sans;
 }
@@ -37,6 +42,7 @@ nyc20151 = dd.read_csv("hdfs:///user/data/tripData/yellow_tripdata_2015-01.csv",
     [{'owner': 'geckolml', 'kind': 'file', 'last_access': 1495301469, 'group': 'supergroup', 'last_mod': 1494590508, 'name': '/user/data/tripData/yellow_tripdata_2015-01.csv', 'block_size': 134217728, 'replication': 1, 'size': 1985964692, 'permissions': 420}, {'owner': 'geckolml', 'kind': 'file', 'last_access': 1494766894, 'group': 'supergroup', 'last_mod': 1494590599, 'name': '/user/data/tripData/yellow_tripdata_2015-02.csv', 'block_size': 134217728, 'replication': 1, 'size': 1945357622, 'permissions': 420}]
 
 
+
 * `nyc20151pd` es Dataframe de Pandas que almacena el .csv guardado en hdfs.
 * `nyc20151`   es Dataframe de Dask que almacena el .csv guardado en hdfs.
 
@@ -67,7 +73,7 @@ Podemos observar las cinco primeras filas de los csv almacenados en el HDFS. Cad
 * trip_distance : La distancia en millas que reportó el taximetro.
 * pickup_longitude: Longitud donde el medidor fue activado.
 * pickup_latitude : Latitud donde el medidor fue activado.
-* RateCodeID : 
+* RateCodeID :
 * store_and_fw_flag
 * dropoff_longitude :  Longitud donde el medidor fue desactivado.
 * dropoff_latitude : Latitud donde el medidor fue activado.
@@ -102,6 +108,7 @@ Podemos observar las cinco primeras filas de los csv almacenados en el HDFS. Cad
     4      11934
     5          2
     Name: payment_type, dtype: int64
+
 
 
 
@@ -410,6 +417,9 @@ font-family: Consolas, monospace;
 }
 
 
+[back to the homepage]({{ site.baseurl }}).
+
+
 
 
 
@@ -417,3 +427,4 @@ font-family: Consolas, monospace;
 ```python
 
 ```
+
