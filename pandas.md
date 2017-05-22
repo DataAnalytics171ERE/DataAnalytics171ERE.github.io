@@ -3,7 +3,7 @@ layout: page
 title: Pandas
 ---
 
-(Pandas)[http://pandas.pydata.org/] es una biblioteca de software escrita para el lenguaje de programación Python para la manipulación y análisis de datos. En particular, ofrece estructuras de datos y operaciones para manipular tablas numéricas y series temporales. Pandas es un software libre lanzado bajo la licencia BSD de tres cláusulas. El nombre se deriva del término "datos de panel", un término de econometría para conjuntos de datos estructurados multidimensionales.
+[Pandas](http://pandas.pydata.org/) es una biblioteca de software escrita para el lenguaje de programación Python para la manipulación y análisis de datos. En particular, ofrece estructuras de datos y operaciones para manipular tablas numéricas y series temporales. Pandas es un software libre lanzado bajo la licencia BSD de tres cláusulas. El nombre se deriva del término "datos de panel", un término de econometría para conjuntos de datos estructurados multidimensionales.
 
 Funciones de la biblioteca
 

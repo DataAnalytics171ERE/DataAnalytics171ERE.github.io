@@ -3,7 +3,7 @@ layout: page
 title: HDFS
 ---
 
-(HDFS)[https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html] es el acrónimo para Hadoop Distributed File System, un sistema de archivos distribuidos(1)  que permite optimizar el flujo de datos mediante su arquitectura de master-slave haciendo uso de sus NodeName y DataNode.
+[HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) es el acrónimo para Hadoop Distributed File System, un sistema de archivos distribuidos(1)  que permite optimizar el flujo de datos mediante su arquitectura de master-slave haciendo uso de sus NodeName y DataNode.
 
 <img src="{{ "/img/hdfs.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Aplicación">
 
