@@ -12,4 +12,5 @@ Members :
 - [x] HDFS connection
 - [x] Heat Maps
 - [x] Some queries 
-- [ ] Dask
+- [x] Dask
+- [x] Comparación de tiempos DataFrame Dask y DataFrame Pandas
