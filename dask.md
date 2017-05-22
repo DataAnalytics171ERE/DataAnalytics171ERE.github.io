@@ -3,12 +3,13 @@ layout: page
 title: Dask
 ---
 
-Dask es una biblioteca de computación paralela flexible para la computación analítica.
+[Dask](http://dask.pydata.org/en/latest/) es una biblioteca de computación paralela flexible para la computación analítica.
 
 Dask se compone de dos componentes:
 
-* Programación dinámica de tareas optimizada para el cálculo. Esto es similar a Airflow, Luigi, Celery, or Make, pero optimizado para cargas de trabajo computacionales interactivas.
-* Colecciones "Big Data", como matrices paralelas, marcos de datos y listas que extienden interfaces comunes como iteradores NumPy, Pandas o Python a entornos más grandes que la memoria o distribuidos. Estas colecciones paralelas se ejecutan en la parte superior de los programadores de tareas dinámicas.
+* **Programación dinámica de tareas optimizada para el cálculo.** Esto es similar a Airflow, Luigi, Celery, or Make, pero optimizado para cargas de trabajo computacionales interactivas.
+
+* **Colecciones "Big Data"**, como matrices paralelas, marcos de datos y listas que extienden interfaces comunes como iteradores NumPy, Pandas o Python a entornos más grandes que la memoria o distribuidos. Estas colecciones paralelas se ejecutan en la parte superior de los programadores de tareas dinámicas.
 
 <img src="{{ "/img/dask.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Aplicación">
 
