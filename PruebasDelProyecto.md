@@ -1,6 +1,6 @@
 ---
 layout: page
-title: <span style="color: #970B0B; font-family: Babas; font-size: 2.5em;">PruebasDelProyecto</span>
+title: Pruebas Notebook
 ---
 
 Para nuestras pruebas usamos dos archivos csv cada uno de 1.8 GB aproximadamente el cual consiste en datos de lo staxis de New York City del año 2015 en los meses de Enero y Febrero.
