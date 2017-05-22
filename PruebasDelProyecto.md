@@ -44,6 +44,7 @@ nyc20151 = dd.read_csv("hdfs:///user/data/tripData/yellow_tripdata_2015-01.csv",
     [{'last_mod': 1494590508, 'size': 1985964692, 'kind': 'file', 'group': 'supergroup', 'last_access': 1495343517, 'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-01.csv', 'permissions': 420, 'replication': 1}, {'last_mod': 1494590599, 'size': 1945357622, 'kind': 'file', 'group': 'supergroup', 'last_access': 1494766894, 'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-02.csv', 'permissions': 420, 'replication': 1}]
 
 
+
 * `nyc20151pd` es Dataframe de Pandas que almacena el .csv guardado en hdfs.
 * `nyc20151`   es Dataframe de Dask que almacena el .csv guardado en hdfs.
 
@@ -86,7 +87,7 @@ Podemos observar las cinco primeras filas de los csv almacenados en el HDFS. Cad
 * trip_distance : La distancia en millas que reportó el taximetro.
 * pickup_longitude: Longitud donde el medidor fue activado.
 * pickup_latitude : Latitud donde el medidor fue activado.
-* RateCodeID : 
+* RateCodeID :
 * store_and_fw_flag
 * dropoff_longitude :  Longitud donde el medidor fue desactivado.
 * dropoff_latitude : Latitud donde el medidor fue activado.
@@ -161,6 +162,7 @@ timeit nyc20151.passenger_count.sum()
 ```
 
     1000 loops, best of 3: 613 µs per loop
+
 
 
 
@@ -603,10 +605,13 @@ vendorID tpep_pickup_datetime passenger_count
 
 
 
+
 ```python
 qwerty=nyc20151pd.groupby(nyc20151pd.tpep_pickup_datetime.dt.hour).passenger_count.sum()
 qwerty.head
 ```
+
+
 
 
 
@@ -643,3 +648,10 @@ qwerty.head
 > Respuesta : Se consideraria hora punta a las 17 horas debido
 
 >  a su gran numero de pasajeros en los taxis en NYC.
+
+```python
+
+```
+
+
+[back to the homepage]({{ site.baseurl }}).
