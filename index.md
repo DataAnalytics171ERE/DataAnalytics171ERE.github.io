@@ -4,9 +4,9 @@ title: Pandas y HDFS con DataFrame Dask
 ---
 INTRODUCCIÓN
 ====================
-La rapidez con la que se genera información hoy en día es muy grande, por lo tanto las aplicaciones basadas en información generada por estos entes deben tener características como tener un procesamiento en paralelo, tolerante a fallos, escalables y de alta disponibilidad. Por ello las tegnología que se usarán en torno al lenguaje de python.
 
-Estan son:
+La rapidez con la que se genera información hoy en día es muy grande, por lo tanto las aplicaciones basadas en información generada por estos entes deben tener características como tener un procesamiento en paralelo, tolerante a fallos, escalables y de alta disponibilidad.
+
 * Pandas
 * Librería Dask
 * Dataframe Dask
