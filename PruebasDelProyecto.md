@@ -360,7 +360,8 @@ timeit nyc20151.groupby(nyc20151.tpep_pickup_datetime.dt.dayofweek).tip_amount.s
 timeit nyc20151pd.groupby(nyc20151pd.tpep_pickup_datetime.dt.dayofweek).tip_amount.sum()
 ```
 
-    The slowest run took 10.59 times longer than the fastest. This could mean that an intermediate result is being cached.
+    The slowest run took 10.59 times longer than the fastest.
+    This could mean that an intermediate result is being cached.
     1 loop, best of 3: 837 ms per loop
 
 
@@ -390,9 +391,14 @@ timeit nyc20151pd.groupby(['tpep_pickup_datetime','pickup_longitude','pickup_lat
 ```python
 import pandas
 timeNyc20151 = pandas.DataFrame({'total':[1.95,0.613,26.9,3.07,3.34,2.9],
-                                 'abbrev':['value_counts','sum()','nrows','pasajerosPorDiaSemana','PropinasPorDiaSemana','salidaTaxisMismaPosicion']})
+                                 'abbrev':
+                           ['value_counts','sum()','nrows',
+                           'pasajerosPorDiaSemana','PropinasPorDiaSemana',
+                           'salidaTaxisMismaPosicion']})
 timeNyc20151pd = pandas.DataFrame({'total':[987,11.7,0.969,786,837,8.58],
-                                   'abbrev':['value_counts','sum()','nrows','pasajerosPorDiaSemana','PropinasPorDiaSemana','salidaTaxisMismaPosicion']})
+                                   'abbrev':['value_counts','sum()','nrows',
+                                   'pasajerosPorDiaSemana','PropinasPorDiaSemana',
+                                   'salidaTaxisMismaPosicion']})
 ```
 
 
@@ -434,7 +440,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-g = sns.factorplot(x="trip_distance",y="total_amount",data=nyc20151[(nyc20151.payment_type == 2) & (nyc20151.passenger_count == 1)].head(20), size=20, kind="bar", palette="muted")
+g = sns.factorplot(x="trip_distance",y="total_amount",
+data=nyc20151[(nyc20151.payment_type == 2) & (nyc20151.passenger_count == 1)].head(20),
+size=20, kind="bar", palette="muted")
 
 g.set_titles("Grafica")
 g.despine(left=False, right=False, top=False, bottom= False)
@@ -456,7 +464,8 @@ plt.show()
 
 
 ```python
-nyc20151[['VendorID','trip_distance','total_amount']][(nyc20151.payment_type == 2) & (nyc20151.passenger_count == 1)].head(20)
+nyc20151[['VendorID','trip_distance','total_amount']]
+[(nyc20151.payment_type == 2) & (nyc20151.passenger_count == 1)].head(20)
 ```
 
 
