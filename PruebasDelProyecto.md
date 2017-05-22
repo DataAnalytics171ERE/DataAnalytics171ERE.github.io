@@ -1,12 +1,6 @@
 ---
 layout: page
-title: PruebasDelProyecto
----
-
-
----
-
-### <span style="color: #970B0B; font-family: Babas; font-size: 2.5em;">Pandas y HDFS con DataFrame Dask</span>
+title: <span style="color: #970B0B; font-family: Babas; font-size: 2.5em;">PruebasDelProyecto</span>
 ---
 
 Para nuestras pruebas usamos dos archivos csv cada uno de 1.8 GB aproximadamente el cual consiste en datos de lo staxis de New York City del año 2015 en los meses de Enero y Febrero.
@@ -23,7 +17,7 @@ Esos archivos fueron puestos en HDFS local en una laptop dando como resultado lo
 <img src="{{ "/img/hdfs1.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="HDFS">
 
 
- #### <span style="color: #970B0B; font-family: Babas; font-size: 2em;">Código</span>
+ ### <span style="color: #970B0B; font-family: Babas; font-size: 1.5em;">Código</span>
 
 
 Vamos a leer uno de los archivos que guardamos en el HDFS (yellow_tripdata_2015-01.csv y yellow_tripdata_2015-02.csv) y los almacenamos con Dataframe Pandas y Dataframe Dask.
@@ -447,7 +441,7 @@ plt.show()
 
 
 
-<img src="{{ "/img/output_47_0.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Grafico">
+<img src="{{ "/img/output_12_0.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Grafico">
 
 
 ### Datos: 
