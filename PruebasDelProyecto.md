@@ -17,7 +17,7 @@ Esos archivos fueron puestos en HDFS local en una laptop dando como resultado lo
 <img src="{{ "/img/hdfs1.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="HDFS">
 
 
- ### <span style="color: #970B0B; font-family: Babas; font-size: 1.5em;">Codigo</span>
+####  <span style="color: #970B0B; font-family: Babas; font-size: 2em;"> Código</span>
 
 
 Vamos a leer uno de los archivos que guardamos en el HDFS (yellow_tripdata_2015-01.csv y yellow_tripdata_2015-02.csv) y los almacenamos con Dataframe Pandas y Dataframe Dask.
