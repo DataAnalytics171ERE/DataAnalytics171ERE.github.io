@@ -17,7 +17,7 @@ Esos archivos fueron puestos en HDFS local en una laptop dando como resultado lo
 <img src="{{ "/img/hdfs1.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="HDFS">
 
 
- ### <span style="color: #970B0B; font-family: Babas; font-size: 1.5em;">Código</span>
+ ### <span style="color: #970B0B; font-family: Babas; font-size: 1.5em;">Codigo</span>
 
 
 Vamos a leer uno de los archivos que guardamos en el HDFS (yellow_tripdata_2015-01.csv y yellow_tripdata_2015-02.csv) y los almacenamos con Dataframe Pandas y Dataframe Dask.
@@ -35,7 +35,11 @@ nyc20151 = dd.read_csv("hdfs:///user/data/tripData/yellow_tripdata_2015-01.csv",
 #nyc20151.head()
 ```
 
-    [{'last_mod': 1494590508, 'size': 1985964692, 'kind': 'file', 'group': 'supergroup', 'last_access': 1495343517, 'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-01.csv', 'permissions': 420, 'replication': 1}, {'last_mod': 1494590599, 'size': 1945357622, 'kind': 'file', 'group': 'supergroup', 'last_access': 1494766894, 'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-02.csv', 'permissions': 420, 'replication': 1}]
+    [{'last_mod': 1494590508, 'size': 1985964692, 'kind': 'file', 'group': 'supergroup', 'last_access': 1495343517,
+    'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-01.csv', 
+    'permissions': 420, 'replication': 1}, {'last_mod': 1494590599, 'size': 1945357622, 'kind': 'file',
+    'group': 'supergroup', 'last_access': 1494766894, 'block_size': 134217728, 'owner': 'geckolml',
+    'name': '/user/data/tripData/yellow_tripdata_2015-02.csv', 'permissions': 420, 'replication': 1}]
 
 
 
@@ -136,7 +140,8 @@ nyc20151.dtypes
 timeit nyc20151[nyc20151.tip_amount == 0].payment_type.value_counts()
 ```
 
-    The slowest run took 4.18 times longer than the fastest. This could mean that an intermediate result is being cached.
+    The slowest run took 4.18 times longer than the fastest.
+    This could mean that an intermediate result is being cached.
     100 loops, best of 3: 1.95 ms per loop
 
 
@@ -182,7 +187,8 @@ timeit len(nyc20151.index)
 timeit len(nyc20151pd.index)
 ```
 
-    The slowest run took 54660.36 times longer than the fastest. This could mean that an intermediate result is being cached.
+    The slowest run took 54660.36 times longer than the fastest.
+    This could mean that an intermediate result is being cached.
     1000000 loops, best of 3: 969 ns per loop
 
 
@@ -192,7 +198,8 @@ timeit len(nyc20151pd.index)
 
 
 ```python
-nyc20151pd[['tpep_pickup_datetime','tpep_dropoff_datetime']]=nyc20151pd[['tpep_pickup_datetime','tpep_dropoff_datetime']].apply(pandas.to_datetime)
+nyc20151pd[['tpep_pickup_datetime','tpep_dropoff_datetime']]=nyc20151pd[['tpep_pickup_datetime',
+                                             'tpep_dropoff_datetime']].apply(pandas.to_datetime)
 ```
 
 
@@ -299,7 +306,8 @@ nyc20151pd.groupby(nyc20151pd.tpep_pickup_datetime.dt.dayofweek).passenger_count
 timeit nyc20151.groupby(nyc20151.tpep_pickup_datetime.dt.dayofweek).passenger_count.sum()
 ```
 
-    The slowest run took 158.63 times longer than the fastest. This could mean that an intermediate result is being cached.
+    The slowest run took 158.63 times longer than the fastest.
+    This could mean that an intermediate result is being cached.
     1 loop, best of 3: 3.07 ms per loop
 
 
