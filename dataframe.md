@@ -20,8 +20,8 @@ Por defecto, dask.dataframe utiliza el planificador multihilo. Esto expone un ci
 
 Dask.dataframe sólo cubre una parte pequeña pero bien utilizada de la API de pandas. Esta limitación es por dos razones:
 
-El API de pandas es enorme
-Algunas operaciones son realmente difíciles de hacer en paralelo (por ejemplo, ordenar)
+* El API de pandas es enorme
+* Algunas operaciones son realmente difíciles de hacer en paralelo (por ejemplo, ordenar)
 
 Además, algunas operaciones importantes como set_index funcionan, pero son más lentas que en pandas porque pueden escribir en disco.
 

@@ -6,18 +6,18 @@ title: Pruebas Notebook
 Para nuestras pruebas usamos dos archivos csv cada uno de 1.8 GB aproximadamente el cual consiste en datos de lo staxis de New York City del año 2015 en los meses de Enero y Febrero.
 
 
-### <span style="color: #2C3F28; font-family: Babas; font-size: 1.5em;">Taxis amarillos NYC</span>
+### <span style="color: #2C3F28; font-family: Babas; font-size: 1em;">Taxis amarillos NYC</span>
 
 <img src="{{ "/img/taxi.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Pruebas">
 
 
-### <span style="color: #2C3F28; font-family: Babas; font-size: 1.5em;">HDFS</span>
+### <span style="color: #2C3F28; font-family: Babas; font-size: 1em;">HDFS</span>
 Esos archivos fueron puestos en HDFS local en una laptop dando como resultado lo siguiente :
 
 <img src="{{ "/img/hdfs1.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="HDFS">
 
 
-####  <span style="color: #970B0B; font-family: Babas; font-size: 2em;"> Código</span>
+####  <span style="color: #970B0B; font-family: Babas; font-size: 1em;"> Código</span>
 
 
 Vamos a leer uno de los archivos que guardamos en el HDFS (yellow_tripdata_2015-01.csv y yellow_tripdata_2015-02.csv) y los almacenamos con Dataframe Pandas y Dataframe Dask.
@@ -36,23 +36,21 @@ nyc20151 = dd.read_csv("hdfs:///user/data/tripData/yellow_tripdata_2015-01.csv",
 ```
 
     [{'last_mod': 1494590508, 'size': 1985964692, 'kind': 'file', 'group': 'supergroup', 'last_access': 1495343517,
-    'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-01.csv', 
+    'block_size': 134217728, 'owner': 'geckolml', 'name': '/user/data/tripData/yellow_tripdata_2015-01.csv',
     'permissions': 420, 'replication': 1}, {'last_mod': 1494590599, 'size': 1945357622, 'kind': 'file',
     'group': 'supergroup', 'last_access': 1494766894, 'block_size': 134217728, 'owner': 'geckolml',
     'name': '/user/data/tripData/yellow_tripdata_2015-02.csv', 'permissions': 420, 'replication': 1}]
 
 
 
-* `nyc20151pd` es Dataframe de Pandas que almacena el .csv guardado en hdfs.
-* `nyc20151`   es Dataframe de Dask que almacena el .csv guardado en hdfs.
+> nyc20151pd es Dataframe de Pandas que almacena el .csv guardado en hdfs.
+
+> nyc20151 es Dataframe de Dask que almacena el .csv guardado en hdfs.
 
 
 ```python
 nyc20151.columns
 ```
-
-
-
 
     Index(['VendorID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime',
            'passenger_count', 'trip_distance', 'pickup_longitude',
@@ -64,7 +62,7 @@ nyc20151.columns
 
 
 
-La cantidad de filas en nuestros Dataframe Pandas y Dask en el archivo `yellow_tripdata_2015-01.csv` es 12748986 como se muestra en la columna de abajo
+La cantidad de filas en nuestros Dataframe Pandas y Dask en el archivo **yellow_tripdata_2015-01.csv** es 12748986 como se muestra en la columna de abajo
 
 
 ```python
@@ -78,26 +76,27 @@ print(len(nyc20151pd.index))
 
 Podemos observar las cinco primeras filas de los csv almacenados en el HDFS. Cada tupla se refiere a un viaje en un taxi el cual posee los siguientes atributos :
 
-* VendorID : Quien provee el grabado : 1-Creative Mobile Technologies, 2-VeriFone Inc.
-* tpep_pickup_datetime : La fecha y hora cuando el medidor se activó.
-* tpep_dropoff_datetime :  La fecha y hora cuando el medidor se desactivó.
-* passenger_count: Numero de pasajeros en el vehiculo .
-* trip_distance : La distancia en millas que reportó el taximetro.
-* pickup_longitude: Longitud donde el medidor fue activado.
-* pickup_latitude : Latitud donde el medidor fue activado.
-* RateCodeID :
-* store_and_fw_flag
-* dropoff_longitude :  Longitud donde el medidor fue desactivado.
-* dropoff_latitude : Latitud donde el medidor fue activado.
-* payment_type : 1=Tarjeta de Credito, 2=Cash, 3=sin cargo, 4=Disputa, 5=Desconocido, 6=Viaje Anulado
-* fare_amount
-* extra : Cargo extra si es de noche(0.5\$) o en hora punta(1\$)
-* mta_tax: Impuesto de MTA de \$ 0.50 que se activa automáticamente basado en la Tarifa en uso.
-* improvement_surcharge: \$ 0.3 de recargo de mejora de los viajes evaluados. El recargo de la mejor comenzo a ser gravado en 2015.
-* tip_amount : Este campo se rellena automaticamente para tarjets de credito. No incluye propinas en efectivo.
-* tolls_amount:  Cantidad total de todos los peajes pagados en viaje
-
-* total_amount: La cantidad total cobrado a los pasajeros. No incluye consejos de efectivo.
+| Atributo | Definición |
+| ---------- | ---------- |
+| VendorID | Quien provee el grabado 1-Creative Mobile Technologies, 2-VeriFone Inc.|
+| tpep_pickup_datetime | La fecha y hora cuando el medidor se activó.|
+| tpep_dropoff_datetime |  La fecha y hora cuando el medidor se desactivó.|
+| passenger_count | Numero de pasajeros en el vehiculo .|
+| trip_distance | La distancia en millas que reportó el taximetro.|
+| pickup_longitude | Longitud donde el medidor fue activado.|
+| pickup_latitude | Latitud donde el medidor fue activado.|
+| RateCodeID | |
+| store_and_fw_flag | |
+| dropoff_longitude |  Longitud donde el medidor fue desactivado.|
+| dropoff_latitude | Latitud donde el medidor fue activado.|
+| payment_type | 1=Tarjeta de Credito, 2=Cash, 3=sin cargo, 4=Disputa, 5=Desconocido, 6=Viaje Anulado.|
+| fare_amount |Cantidad de tarifa.|
+| extra | Cargo extra si es de noche(0.5\$) o en hora punta(1\$)|
+| mta_tax | Impuesto de MTA de \$ 0.50 que se activa automáticamente basado en la Tarifa en uso.|
+| improvement_surcharge | \$ 0.3 de recargo de mejora de los viajes evaluados. El recargo de la mejor comenzo a ser gravado en 2015.|
+| tip_amount | Este campo se rellena automaticamente para tarjets de credito. No incluye propinas en efectivo.
+| tolls_amount |  Cantidad total de todos los peajes pagados en viaje.|
+| total_amount | La cantidad total cobrado a los pasajeros. No incluye consejos de efectivo.|
 
 
 
@@ -131,9 +130,9 @@ nyc20151.dtypes
 
 
 
-####  <span style="color: #970B0B; font-family: Babas; font-size: 2em;"> Evaluamos los tiempos de ejecución entre Dataframe de pandas y Dask Dataframe</span>
+####  <span style="color: #970B0B; font-family: Babas; font-size: 1.5em;"> Evaluamos los tiempos de ejecución entre Dataframe de pandas y Dask Dataframe</span>
 
-####  `value_counts()`
+##### value_counts()
 
 
 ```python
@@ -153,7 +152,7 @@ timeit nyc20151pd[nyc20151pd.tip_amount == 0].payment_type.value_counts()
     1 loop, best of 3: 987 ms per loop
 
 
-#### `sum()`
+##### sum()
 
 
 ```python
@@ -172,7 +171,7 @@ timeit nyc20151pd.passenger_count.sum()
     100 loops, best of 3: 11.7 ms per loop
 
 
-#### `Numero de filas`
+##### Numero de filas
 
 
 ```python
@@ -246,9 +245,6 @@ nyc20151.tpep_dropoff_datetime=nyc20151.tpep_dropoff_datetime.astype('datetime64
 nyc20151.dtypes
 ```
 
-
-
-
     VendorID                          int64
     tpep_pickup_datetime     datetime64[ns]
     tpep_dropoff_datetime    datetime64[ns]
@@ -281,9 +277,6 @@ nyc20151.dtypes
 ```python
 nyc20151pd.groupby(nyc20151pd.tpep_pickup_datetime.dt.dayofweek).passenger_count.sum()
 ```
-
-
-
 
     tpep_pickup_datetime
     0    2200087
@@ -460,7 +453,7 @@ plt.show()
 <img src="{{ "/img/output_12_0.png" | prepend: site.baseurl | replace: '//', '/' }}" alt="Grafico">
 
 
-### Datos: 
+### Datos:
 
 
 ```python

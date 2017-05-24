@@ -38,7 +38,7 @@
 	      <a href="
 										/PruebasDelProyecto
 								 
-								 		" title="Pruebas">Pruebas</a>
+								 		" title="Pruebas Notebook">Pruebas Notebook</a>
 	    
 	  
 	    
@@ -122,24 +122,26 @@
 			<main>
 				<article id="page">
 	<h2>DataFrame</h2>
-  <p>DataFrame Dask se ven y se sienten como marcos de datos de pandas, pero operan en conjuntos de datos más grandes que la memoria utilizando múltiples subprocesos. Dask.dataframe no implementa la interfaz completa de pandas.</p>
+  <p><a href="http://dask.pydata.org/en/latest/dataframe.html">DataFrame Dask</a> se ven y se sienten como marcos de datos de pandas, pero operan en conjuntos de datos más grandes que la memoria utilizando múltiples subprocesos. Dask.dataframe no implementa la interfaz completa de pandas.</p>
 
-<p>El módulo dask.dataframe implementa un DataFrame paralelo bloqueado que imita un subconjunto de las pandas DataFrame. Un dask DataFrame se compone de varios en-memoria pandas DataFrames separados a lo largo del índice. Una operación en un dask DataFrame desencadena muchas operaciones pandas en los pandas constituyentes DataFrames de una manera que es consciente de paralelismo potencial y restricciones de memoria.</p>
+<p><strong>El módulo dask.dataframe</strong> implementa un DataFrame paralelo bloqueado que imita un subconjunto de las pandas DataFrame. Un dask DataFrame se compone de varios en-memoria pandas DataFrames separados a lo largo del índice. Una operación en un dask DataFrame desencadena muchas operaciones pandas en los pandas constituyentes DataFrames de una manera que es consciente de paralelismo potencial y restricciones de memoria.</p>
 
 <h3 id="daskdataframe-copies-the-pandas-api">Dask.dataframe copies the pandas API</h3>
 
 <p>Debido a que la API dask.dataframe es un subconjunto de la API pandas, debe ser familiar para los usuarios pandas. Hay algunas ligeras alteraciones debido a la naturaleza paralela de dask.</p>
 
-<h3 id="programación-con-hilos">Programación con hilos</h3>
+<h3 id="programacin-con-hilos">Programación con hilos</h3>
 
 <p>Por defecto, dask.dataframe utiliza el planificador multihilo. Esto expone un cierto paralelismo cuando los pandas o las operaciones numpy subyacentes liberan el GIL. Generalmente los pandas tienen más GIL que NumPy, por lo que las aceleraciones multi-core no son tan pronunciadas para dask.dataframe como lo son para dask.array. Esto está cambiando y el equipo de desarrollo de pandas está trabajando activamente en la liberación de la GIL.</p>
 
-<h3 id="qué-no-funciona">¿Qué no funciona?</h3>
+<h3 id="qu-no-funciona">¿Qué no funciona?</h3>
 
 <p>Dask.dataframe sólo cubre una parte pequeña pero bien utilizada de la API de pandas. Esta limitación es por dos razones:</p>
 
-<p>El API de pandas es enorme
-Algunas operaciones son realmente difíciles de hacer en paralelo (por ejemplo, ordenar)</p>
+<ul>
+  <li>El API de pandas es enorme</li>
+  <li>Algunas operaciones son realmente difíciles de hacer en paralelo (por ejemplo, ordenar)</li>
+</ul>
 
 <p>Además, algunas operaciones importantes como set_index funcionan, pero son más lentas que en pandas porque pueden escribir en disco.</p>
 
